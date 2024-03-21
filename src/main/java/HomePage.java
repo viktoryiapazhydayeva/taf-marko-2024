@@ -9,6 +9,13 @@ public class HomePage {
         this.driver = driver;
     }
 
+    public void closeQuizWindow(){
+        WebElement quizWindow = driver.findElement(By.xpath(HomePageXPath.quizCrossBtn));
+        if (quizWindow.isDisplayed()){
+            quizWindow.click();
+        }
+    }
+
     public void acceptCookies() {
 
         WebElement cookiesBtn = driver.findElement(By.xpath(HomePageXPath.acceptCookiesBtnXPath));  // used by demand if cookies appear
@@ -24,8 +31,9 @@ public class HomePage {
         }
     }
 
-    public String getCopyRightText() {
+    public boolean getCopyRightText(String text) {
         WebElement copyRight = driver.findElement(By.xpath(HomePageXPath.copyRightXPath));
-        return copyRight.getText();
+        String copyRightText= copyRight.getText();
+        return copyRightText.contains(text);
     }
 }

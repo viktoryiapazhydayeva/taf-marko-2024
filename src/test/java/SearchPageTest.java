@@ -10,6 +10,7 @@ public class SearchPageTest extends BaseTest{
         SearchPage searchPage = new SearchPage(driver);
         HomePage homePage = new HomePage(driver);
         homePage.acceptCookies();
+        homePage.closeQuizWindow();
         searchPage.enterSearchData("туфли");
         searchPage.clickSearch();
         searchPage.openSearchedItemCard();

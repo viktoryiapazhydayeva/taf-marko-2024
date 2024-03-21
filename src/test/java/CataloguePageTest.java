@@ -10,6 +10,7 @@ public class CataloguePageTest extends BaseTest {
     @DisplayName("Check Product (Boots) title")
     public void openProductCard() {
         HomePage homePage = new HomePage(driver);
+        homePage.closeQuizWindow();
         CataloguePage cataloguePage = new CataloguePage(driver);
         homePage.acceptCookies();
         cataloguePage.openMenSection();
