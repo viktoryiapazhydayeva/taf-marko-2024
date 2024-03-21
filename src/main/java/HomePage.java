@@ -9,6 +9,13 @@ public class HomePage {
         this.driver = driver;
     }
 
+    public void closeQuizWindow(){
+        WebElement quizWindow = driver.findElement(By.xpath(HomePageXPath.quizCrossBtn));
+        if (quizWindow.isDisplayed()){
+            quizWindow.click();
+        }
+    }
+
     public void acceptCookies() {
 
         WebElement cookiesBtn = driver.findElement(By.xpath(HomePageXPath.acceptCookiesBtnXPath));  // used by demand if cookies appear
