@@ -10,6 +10,8 @@ public class LoginPageTest extends BaseTest{
     @DisplayName("Check login form title")
     public void openLoginForm(){
         LoginPage loginPage = new LoginPage(driver);
+        HomePage homePage = new HomePage(driver);
+        homePage.closeQuizWindow();
         loginPage.clickLoginIcon();
         loginPage.openAuthorizationLink();
         Assertions.assertEquals(EXPECTED_AUTHORIZATION_FORM_TITLE, loginPage.getAuthorizationFormTitle());
@@ -21,6 +23,7 @@ public class LoginPageTest extends BaseTest{
         LoginPage loginPage = new LoginPage(driver);
         HomePage homePage = new HomePage(driver);           //// МОЖНО ВЫНЕСТИ ПОТОМ В BASE PAGE ??
         homePage.acceptCookies();
+        homePage.closeQuizWindow();
         loginPage.clickLoginIcon();
         loginPage.openAuthorizationLink();
         loginPage.enterPhoneNumber("44-565-11-64");

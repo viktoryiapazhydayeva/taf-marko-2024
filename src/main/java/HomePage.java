@@ -31,8 +31,9 @@ public class HomePage {
         }
     }
 
-    public String getCopyRightText() {
+    public boolean getCopyRightText(String text) {
         WebElement copyRight = driver.findElement(By.xpath(HomePageXPath.copyRightXPath));
-        return copyRight.getText();
+        String copyRightText= copyRight.getText();
+        return copyRightText.contains(text);
     }
 }

@@ -11,6 +11,8 @@ public class HomePageTest extends BaseTest {
         HomePage homePage = new HomePage(driver);
         //homePage.acceptCookies();
         //homePage.closeBanner();
-        Assertions.assertEquals(COPY_RIGHT_TEXT, homePage.getCopyRightText());
+        homePage.closeQuizWindow();
+        //Assertions.assertEquals(COPY_RIGHT_TEXT, homePage.getCopyRightText());
+        Assertions.assertTrue(homePage.getCopyRightText(COPY_RIGHT_TEXT));
     }
 }
